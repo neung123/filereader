@@ -19,7 +19,7 @@ public class Stopwatch {
 
     public void stop(){
         if(!running) return;
-        running = false;
+        running = false; 
         stopTime = System.nanoTime();
     }
 
