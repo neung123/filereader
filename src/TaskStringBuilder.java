@@ -3,9 +3,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+/**
+ * Read file by using FileReader, read 1-char at a time to StringBuilder.
+ *
+ * @author Pornpavee Seri-umnuoy
+ */
 public class TaskStringBuilder implements Runnable{
     public final String ALICE_PATH = "src/Alice-in-Wonderland.txt";
 
+    /**
+     * Reading 1-char at a time using FileReader.
+     * @return all char in the file in String.
+     */
     public String readFileToStringBuilder(){
 
         StringBuilder data = new StringBuilder();
@@ -33,6 +42,10 @@ public class TaskStringBuilder implements Runnable{
         return data.toString();
     }
 
+    /**
+     * A method for making TaskStringBuilder runnable.
+     * run readFileToStringBuilder and print the result.
+     */
     @Override
     public void run() {
         String data = readFileToStringBuilder();

@@ -3,9 +3,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Read file by using BufferedReader, read 1-line at a time.
+ *
+ * @author Pornpavee Seri-umnuoy
+ */
 public class TaskBufferedReader implements Runnable{
     public final String ALICE_PATH = "src/Alice-in-Wonderland.txt";
 
+    /**
+     * Reading line at a time using BufferedReader.
+     * @return all char in the file in String.
+     */
     public String readFileBufferedReader() {
         String result = "";
         BufferedReader in = null;
@@ -26,6 +35,11 @@ public class TaskBufferedReader implements Runnable{
 
         return result;
     }
+
+    /**
+     * A method for making TaskBufferedReader runnable.
+     * run readFileBufferedReader and print the result.
+     */
     @Override
     public void run() {
         String data = readFileBufferedReader();

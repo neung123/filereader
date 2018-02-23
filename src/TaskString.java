@@ -3,9 +3,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+/**
+ * Read file by using FileReader, read 1-char at a time to String.
+ *
+ * @author Pornpavee Seri-umnuoy
+ */
 public class TaskString implements Runnable {
     public final String ALICE_PATH = "src/Alice-in-Wonderland.txt";
 
+    /**
+     * Reading 1-char at a time using FileReader.
+     * @return all char in the file in String.
+     */
     public String readFileToString(){
 
         String data = "";
@@ -33,7 +42,10 @@ public class TaskString implements Runnable {
         return data;
     }
 
-
+    /**
+     * A method for making TaskString runnable.
+     * run readFileBufferedReader and print the result.
+     */
     @Override
     public void run() {
         String data = readFileToString();
